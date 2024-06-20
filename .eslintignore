@@ -1,0 +1,6 @@
+**/node_modules
+**/cypress
+**/dist
+**/public
+**/build
+**/cdk.out
