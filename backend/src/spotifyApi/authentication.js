@@ -39,9 +39,7 @@ app.get('/callback', function (req, res) {
       'content-type': 'application/x-www-form-urlencoded',
       Authorization:
         'Basic ' +
-        new Buffer.from(`${process.env.SPOTIFY_CLIENTID}` + ':' + `${process.env.SPOTIFY_SECRET}`).toString(
-          'base64'
-        )
+        new Buffer.from(`${process.env.SPOTIFY_CLIENTID}` + ':' + `${process.env.SPOTIFY_SECRET}`).toString('base64')
     },
     json: true
   }
@@ -57,21 +55,3 @@ const port = 3030
 app.listen(port, () => {
   console.log(`Spotmefy app listening on port ${port}`)
 })
-
-//#region 
-
-// TODO:
-// * Delete Express layer and implement AWS Rest Api with Lambdas
-//      auth / login
-//      auth / refresh
-//      auth / logout
-// * Axios implementation
-// * Complete all success and errors cases
-// * Authorization & roles for lambdas and apis
-// * Make case for hold token (refresh only when is needed)
-// * Improve security with Authorization code with PKCE extension
-// OBSERVABILITY
-// DOCUMENTATION
-// DEBUG
-// TEST
-//#endregion
